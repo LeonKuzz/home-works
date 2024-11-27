@@ -1,6 +1,9 @@
 server:
   port: 8080
 
+cbr:
+  address: https://cbr.ru/scripts/XML_daily.asp
+
 spring:
   liquibase:
     enabled: true
