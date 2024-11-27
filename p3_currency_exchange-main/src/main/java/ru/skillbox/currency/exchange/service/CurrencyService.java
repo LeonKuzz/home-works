@@ -1,12 +1,10 @@
 package ru.skillbox.currency.exchange.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.skillbox.currency.exchange.dto.CurrencyDto;
-import ru.skillbox.currency.exchange.dto.ShortCurrencyInfoDto;
 import ru.skillbox.currency.exchange.entity.Currency;
 import ru.skillbox.currency.exchange.mapper.CurrencyMapper;
 import ru.skillbox.currency.exchange.repository.CurrencyRepository;
@@ -85,7 +83,7 @@ public class CurrencyService {
     }
     public void updateDatabase(){
         getCBRCurrenciesList();
-        File file = new File("src/main/resources/data/information.xml");
+        File file = new File("src/main/resources/data/cbrlistvalcurs.xml");
         List<Valute> valutes = null;
         try {
             valutes = JAXBXMLHandler.unmarshal(file);

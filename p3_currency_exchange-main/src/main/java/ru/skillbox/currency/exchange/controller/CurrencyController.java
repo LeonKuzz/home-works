@@ -1,17 +1,10 @@
 package ru.skillbox.currency.exchange.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import liquibase.pro.packaged.C;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.skillbox.currency.exchange.dto.CurrencyDto;
-import ru.skillbox.currency.exchange.dto.ShortCurrencyInfoDto;
 import ru.skillbox.currency.exchange.service.CurrencyService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

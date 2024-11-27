@@ -17,15 +17,15 @@ import javax.xml.bind.Unmarshaller;
     public class JAXBXMLHandler {
 
         // Export
-//        public static void marshal(List<Book> books, File selectedFile)
+//        public static void marshal(List<Valute> valCurs, File selectedFile)
 //                throws IOException, JAXBException {
 //            JAXBContext context;
 //            BufferedWriter writer = null;
 //            writer = new BufferedWriter(new FileWriter(selectedFile));
-//            context = JAXBContext.newInstance(Books.class);
+//            context = JAXBContext.newInstance(ValCurs.class);
 //            Marshaller m = context.createMarshaller();
 //            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-//            m.marshal(new Books(books), writer);
+//            m.marshal(new ValCurs(valCurs), writer);
 //            writer.close();
 //        }
 
