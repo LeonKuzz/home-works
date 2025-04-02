@@ -1,0 +1,47 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+        ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %caller{1} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FileAll" class="ch.qos.logback.core.FileAppender">
+        <file>allLog.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %caller{1} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FileController" class="ch.qos.logback.core.FileAppender">
+        <file>controller.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FileWarn" class="ch.qos.logback.core.FileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <file>warn.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %caller{1} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--Логгеры для всех событий  -->
+    <logger name="ru.fastdelivery" level="trace" additivity="false">
+        <appender-ref ref="FileAll" />
+        <appender-ref ref="FileWarn" />
+    </logger>
+
+    <logger name="ru.fastdelivery.presentation.calc" level="INFO"  additivity="true">
+        <!--Логгер для контроллера  -->
+        <appender-ref ref="FileController" />
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
